@@ -9,32 +9,30 @@ export default (props) => {
 
   return (
     <div>
-      <p>
+      <p className="attending">
         Going: {going.length} Not Going: {notgoing.length}
       </p>
       {loading ? (
-        <p>Loading...</p>
+        <p className="loading">Loading...</p>
       ) : (
         <div className="bgContainer">
           <div className="person">
-            <p>
+            <div className="userPhoto">
               <img src={random.picture} />
-            </p>
-            <div className="infoContainer">
-              <div className="actualInfo">
-                <p>
-                  Name: {random.fname} {random.lname}
-                </p>
-                <p>Phone: {random.phone}</p>
-                <p>Email: {random.email}</p>
-                <div className="buttonAnswer">
-                  <button className="no" onClick={(e) => nogo(random)}>
-                    <Icon icon="times"></Icon>
-                  </button>
-                  <button className="yes" onClick={(e) => go(random)}>
-                    <Icon icon="check"></Icon>
-                  </button>
-                </div>
+            </div>
+            <div className="actualInfo">
+              <p>
+                Name: {random.fname} {random.lname}
+              </p>
+              <p>Phone: {random.phone}</p>
+              <p>Email: {random.email}</p>
+              <div className="buttonAnswer">
+                <button className="no" onClick={(e) => nogo(random)}>
+                  <Icon icon="times"></Icon>
+                </button>
+                <button className="yes" onClick={(e) => go(random)}>
+                  <Icon icon="check"></Icon>
+                </button>
               </div>
             </div>
           </div>

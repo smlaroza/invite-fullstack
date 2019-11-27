@@ -1,15 +1,34 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 .nav {
+  display: flex;
+  justify-content: space-evenly;
   list-style: none;
-  text-decoration: none;
+  width: 330px;
+  margin: auto;
+  margin-top: 10px;
+  padding: 10px 10px;
+  color: black;
 }
 
 .bgContainer {
-  margin-top: 50px;
+  display: flex;
+  justify-content: center;
 }
-.invContainer {
-  width: 300px;
+
+.person {
+  width: 330px;
   background: rgba(233, 233, 233);
-  border: 1px solid rgba(232, 232, 232);
+  border: 2px solid rgba(231, 231, 231);
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 img {
@@ -17,23 +36,19 @@ img {
   border: 3px solid gray;
 }
 
-.userPhoto {
+.userPhoto,
+.personGoingPic,
+.personNotGoingPic {
   display: flex;
   justify-content: center;
   padding: 50px 50px;
 }
 
-.infoContainer {
-  justify-content: center;
-}
-
-.actualInfo {
+.actualInfo,
+.goingInfo {
   border-top: 1px solid rgba(225, 225, 225);
-}
-
-.bgContainer {
-  display: flex;
-  justify-content: center;
+  padding: 10px 10px;
+  line-height: 40px;
 }
 
 .buttonAnswer {
@@ -62,12 +77,19 @@ img {
   font-size: 20px;
 }
 
-p {
-  padding: 10px 10px;
-  line-height: 1px;
+.attending {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
 }
 
-.userName {
-  font-weight: bold;
+.loading {
   display: flex;
+  justify-content: center;
+}
+
+.goingTitle,
+.notGoingTitle {
+  display: flex;
+  justify-content: center;
 }
