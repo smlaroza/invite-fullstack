@@ -24,11 +24,14 @@ html {
 }
 
 .person {
+  display: flex;
+  flex-direction: column;
   width: 330px;
   background: rgba(233, 233, 233);
   border: 2px solid rgba(231, 231, 231);
   margin-top: 20px;
-  margin-bottom: 10px;
+  margin: auto;
+  margin-bottom: 20px;
 }
 
 img {
