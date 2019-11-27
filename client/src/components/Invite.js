@@ -1,38 +1,45 @@
 import React from "react"
-import { useUsers } from "../hooks"
+import { useInvite } from "../hooks"
+import Going from "./Going"
+import notGoing from "./notGoing"
 import Icon from "../lib/Icon"
 
-export function Invite() {
-  const { user } = useUsers()
+export default (props) => {
+  const { random, go, nogo, loading, going, notgoing } = useInvite()
 
   return (
-    <div className="bgContainer">
-      <div className="invContainer">
-        <div className="userPhoto">
-          <img src={user.picture} />
-        </div>
-        <div className="infoContainer">
-          <div className="actualInfo">
+    <div>
+      <p>
+        Going: {going.length} Not Going: {notgoing.length}
+      </p>
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
+        <div className="bgContainer">
+          <div className="person">
             <p>
-              <b>Name:</b> {user.fname} {user.lname}
+              <img src={random.picture} />
             </p>
-            <p>
-              <b>Phone:</b> {user.phone}
-            </p>
-            <p>
-              <b>Email:</b> {user.email}
-            </p>
-            <div className="buttonAnswer">
-              <button className="no">
-                <Icon icon="times" />
-              </button>
-              <button className="yes">
-                <Icon icon="check" />
-              </button>
+            <div className="infoContainer">
+              <div className="actualInfo">
+                <p>
+                  Name: {random.fname} {random.lname}
+                </p>
+                <p>Phone: {random.phone}</p>
+                <p>Email: {random.email}</p>
+                <div className="buttonAnswer">
+                  <button className="no" onClick={(e) => nogo(random)}>
+                    <Icon icon="times"></Icon>
+                  </button>
+                  <button className="yes" onClick={(e) => go(random)}>
+                    <Icon icon="check"></Icon>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
     </div>
   )
 }
